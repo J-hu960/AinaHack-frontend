@@ -1,34 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
+import { ChakraProvider, createSystem, Box, VStack, Container } from "@chakra-ui/react"
+import { config } from './styles/theme'
+import Header from './components/Header';
+import HeroBanner from './components/HeroBanner';
+import Carousel from './components/Carrousel';
+import Footer from './components/Footer';
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  
+  
+  const system = createSystem(config)
+  
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <ChakraProvider value={system}>
+      <Box color="white" w="100vw" minH="100vh" overflowX="hidden">
+        <Header />
+        <HeroBanner />
+        <VStack spaceX={8} align="stretch" px={4} py={8}>
+          <Carousel title="En tendència" />
+          <Carousel title="Pensem que t'agradaràn" />
+          <Carousel title="Novetats" />
+        </VStack>
+        <Footer />
+      </Box>
+    </ChakraProvider>
   )
 }
 
