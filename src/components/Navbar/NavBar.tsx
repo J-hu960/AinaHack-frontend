@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { SetStateAction } from 'react';
 import './Navbar.css';
 
-const Navbar: React.FC = () => {
+interface props{
+  setSearchQuery: React.Dispatch<SetStateAction<string>>
+}
+
+const Navbar= ({setSearchQuery}:props) => {
   return (
     <nav className="navbar navbar-expand-lg">
       <div className="container-fluid">
@@ -35,7 +39,7 @@ const Navbar: React.FC = () => {
         </div>
         <div className="collapse navbar-collapse" id="navbarContent">
           <div className="navbar-nav mx-auto">
-            <a className="nav-link" href="/">
+            <a className="nav-link" href="/home">
               Inici
             </a>
             <a className="nav-link" href="/mi-lista">
@@ -47,7 +51,7 @@ const Navbar: React.FC = () => {
           </div>
 
           <div className="search-bar">
-            <input type="text" placeholder="Buscar..." />
+            <input onChange={(e)=>setSearchQuery(e.target.value)} type="text" placeholder="Buscar..." />
             <button type="button">
               <i className="bi bi-search"></i>
             </button>

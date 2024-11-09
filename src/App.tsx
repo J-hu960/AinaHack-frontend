@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from './components/Navbar/NavBar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -10,21 +10,31 @@ import ChatBot from './pages/ChatBot';
 import MyList from './pages/MyList';
 import CourseDetails from './pages/CourseDetails';
 import MultiStepForm from './pages/Form';
+import LoginPage from './pages/Login';
+import AudioRecorder from './components/AudioRecorder/AudioRecorder';
 
 const App: React.FC = () => {
+
+  const [searchQuery,setSearchQuery]= useState('')
+  const [user,setUser] = useState({})
+  const [toke,setToken] = useState<string>('')
  
   return (
     <div className='app-container'>
-      <Navbar />
+      <Navbar setSearchQuery={setSearchQuery} />
       <div className='container-custom'>
         <Router>      
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<LoginPage setToken={setToken} />} />
             <Route path="/perfil" element={<Perfil />} />
             <Route path="/curso-details/:id" element={<CourseDetails />} /> {/* Ruta con parámetro dinámico */}
             <Route path="/chatbot" element={<ChatBot />} />
             <Route path="/mi-lista" element={<MyList />} />
-            <Route path="/login" element={<MultiStepForm />} />
+            <Route path="/signUp" element={<MultiStepForm />} />
+            <Route path="/login" element={<LoginPage setToken={setToken} />} />
+            <Route path="/home" element={<Home searchQuery={searchQuery} />} />
+            <Route path="/audio" element={<AudioRecorder />} />
+
 
           </Routes>
         </Router>

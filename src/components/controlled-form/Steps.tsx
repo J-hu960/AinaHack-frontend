@@ -84,10 +84,10 @@ const Step3 = ({ goNext }) => {
 };
 
 const Step4 = ({ goNext }) => {
-  const [contrasenya, setContrasenya] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleNext = () => {
-    goNext({ contrasenya });
+    goNext({ password });
   };
 
   return (
@@ -96,7 +96,7 @@ const Step4 = ({ goNext }) => {
 
   <div className="card">
     <h2 className="question text-center">Tria una contrasenya</h2>
-    <input onChange={e => setContrasenya(e.target.value)} type="text" className="input" placeholder="Nom" />
+    <input onChange={e => setPassword(e.target.value)} type="text" className="input" placeholder="Nom" />
 
     <button className="next-button" onClick={handleNext}>Següent</button>
 

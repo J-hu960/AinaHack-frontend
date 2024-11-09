@@ -1,6 +1,7 @@
 import React from 'react';
 import './CourseCard.css';
 import { Link } from 'react-router-dom';
+import CustomLink from '../CustomLink';
 
 interface CourseCardProps {
   imgSrc: string;
@@ -17,7 +18,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ imgSrc, title, date,id }) => {
         <div className="card-content">
           <h3>{title}</h3>
           <p>{date}</p>
-          <Link to={`/curso-details/${id}`}>Ver detalles</Link>  
+          <CustomLink to={`/curso-details/${id}`}>Ver detalles</CustomLink>
         </div>
         </div>
       </div>

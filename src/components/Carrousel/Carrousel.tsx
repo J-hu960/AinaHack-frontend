@@ -14,7 +14,7 @@ const Carousel: React.FC<CarouselProps> = ({ courses, isTopCourses }) => {
       <div id="carousel-container">
         <button className="carousel-button prev">&#10094;</button>
         <div className="carousel " id='carousel1'>
-          {courses.map((course, index) => (
+          {courses.map((course) => (
             <CourseCard id={course.index}  key={course.index} imgSrc={course.imgSrc} title={course.title} date={course.date} />
           ))}
         </div>

@@ -1,6 +1,9 @@
 // pages/ChatBot.tsx
 import React, { useEffect, useState } from 'react';
 import './ChatBot.css';
+import axios from 'axios';
+import { ThreeDots } from 'react-loader-spinner'; // Importa el spinner que más te guste
+
 
 interface Message {
   text: string;
@@ -9,24 +12,38 @@ interface Message {
 
 const ChatBot: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([]);
+  const [error,setError] = useState<boolean>(false)
+  const [loading,setLoading] = useState<boolean>(false)
   const [input, setInput] = useState<string>('');
   const chatEndRef = document.getElementById('reference')
 
-  const handleSendMessage = () => {
-    if (input.trim() === '') return;
+  const handleSendMessage = async() => {
+    setLoading(true)
+    try {
+      const userMessage: Message = { text:input, sender: 'user' };
+      setMessages((prevMessages) => [...prevMessages, userMessage]);
 
-    // Add user message to the chat
-    const userMessage: Message = { text: input, sender: 'user' };
-    setMessages((prevMessages) => [...prevMessages, userMessage]);
+      const response = await axios.post('http://localhost:8000/cb/query', {question:input})
+      console.log(response.data)
+      //hacer call a endpoint
+      if (input.trim() === '') return;
+      const botMessage: Message = { text:response.data.answer, sender: 'bot' };
+      setMessages((prevMessages) => [...prevMessages, botMessage]);
 
-    // Clear input field
-    setInput('');
-
-    // Add bot response (here we just simulate a bot response)
-    setTimeout(() => {
-      const botResponse: Message = { text: `Bot: I received your message: "${input}"`, sender: 'bot' };
-      setMessages((prevMessages) => [...prevMessages, botResponse]);
-    }, 1000);
+      // Add user message to the chat
+  
+      // Clear input field
+      setInput('');
+  
+      // Add bot response (here we just simulate a bot response)
+      
+      
+    } catch (error) {
+      console.log(error)
+    }finally{
+      setLoading(false)
+    }
+   
   };
 
   const scrollToBottom = () => {
@@ -55,6 +72,7 @@ const ChatBot: React.FC = () => {
               <p>{message.text}</p>
             </div>
           ))}
+          {loading && <ThreeDots />}
           {!messages || messages.length === 0 && <div
              
               className={`message bot`}
@@ -64,6 +82,7 @@ const ChatBot: React.FC = () => {
           <div className='reference' id='reference'></div>
         </div>
         <div className="input-section">
+          
           <input
             type="text"
             value={input}
