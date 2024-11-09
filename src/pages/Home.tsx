@@ -10,7 +10,7 @@ interface props{
 const Home = ({searchQuery}:props) => {
   const recommendedCourses = [
     {
-        imgSrc: 'libreta.png',
+        imgSrc: 'georgie.jpg',
         title: 'Introducción a la Programación',
         description: 'Curso básico para comenzar a programar desde cero.',
         instructor: 'Ana Pérez',
@@ -19,7 +19,7 @@ const Home = ({searchQuery}:props) => {
         index: 1
     },
     {
-        imgSrc: 'img3.JPEG',
+        imgSrc: 'dylan.jpg',
         title: 'Desarrollo Web con JavaScript',
         description: 'Aprende a crear aplicaciones web interactivas con JavaScript.',
         instructor: 'Carlos Sánchez',
@@ -28,7 +28,7 @@ const Home = ({searchQuery}:props) => {
         index: 2
     },
     {
-        imgSrc: 'img2.jpg',
+        imgSrc: 'lycs.jpg',
         title: 'Fundamentos de Machine Learning',
         description: 'Explora los conceptos básicos de Machine Learning y su aplicación.',
         instructor: 'Lucía Gómez',
@@ -37,7 +37,7 @@ const Home = ({searchQuery}:props) => {
         index: 3
     },
     {
-        imgSrc: 'libreta.png',
+        imgSrc: 'redd.jpg',
         title: 'Bases de Datos SQL',
         description: 'Curso para entender y manejar bases de datos relacionales con SQL.',
         instructor: 'Juan Martínez',
@@ -46,7 +46,7 @@ const Home = ({searchQuery}:props) => {
         index: 4
     },
     {
-        imgSrc: 'img3.JPEG',
+        imgSrc: 'tim.jpg',
         title: 'UI/UX Design Principles',
         description: 'Descubre los principios fundamentales de diseño de interfaces de usuario.',
         instructor: 'Sofía Rodríguez',
@@ -55,7 +55,7 @@ const Home = ({searchQuery}:props) => {
         index: 5
     },
     {
-        imgSrc: 'img2.jpg',
+        imgSrc: 'unseen.jpg',
         title: 'Ciberseguridad Básica',
         description: 'Conoce las bases de la ciberseguridad para proteger tus datos.',
         instructor: 'David López',

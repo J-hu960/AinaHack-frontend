@@ -1,6 +1,5 @@
 import React from 'react';
 import '../CourseCard/CourseCard.css';
-import { Link } from 'react-router-dom';
 import CustomLink from '../CustomLink';
 
 interface CourseCardProps {
