@@ -1,6 +1,6 @@
 // pages/ChatBot.tsx
 import React, { useEffect, useState } from 'react';
-import './ChatBot.css';
+import './Chatbot.css';
 import axios from 'axios';
 import { ThreeDots } from 'react-loader-spinner'; // Importa el spinner que más te guste
 
@@ -23,11 +23,11 @@ const ChatBot: React.FC = () => {
       const userMessage: Message = { text:input, sender: 'user' };
       setMessages((prevMessages) => [...prevMessages, userMessage]);
 
-      const response = await axios.post('http://localhost:8000/cb/query', {question:input})
+      const response = await axios.post('http://localhost:8000/cb/query', {request:input})
       console.log(response.data)
       //hacer call a endpoint
       if (input.trim() === '') return;
-      const botMessage: Message = { text:response.data.answer, sender: 'bot' };
+      const botMessage: Message = { text:response.data[0].answer, sender: 'bot' };
       setMessages((prevMessages) => [...prevMessages, botMessage]);
 
       // Add user message to the chat

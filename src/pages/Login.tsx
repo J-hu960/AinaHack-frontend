@@ -4,22 +4,23 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 interface  props  {
-  setToken:React.Dispatch<React.SetStateAction<string>>
+  setToken:React.Dispatch<React.SetStateAction<string>>,
+  setUser: React.Dispatch<React.SetStateAction<string>>,
 }
 
-const LoginPage = ({setToken}:props) => {
+const LoginPage = ({setToken,setUser}:props) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const populateBBDD =async()=>{
-    const response = await axios.post("url")
-    console.log(response.data)
+  // const populateBBDD =async()=>{
+  //   const response = await axios.post("url")
+  //   console.log(response.data)
 
-  }
+  // }
 
-  useEffect(()=>{
-    populateBBDD()
-  },[])
+  // useEffect(()=>{
+  //   populateBBDD()
+  // },[])
 
   const navigate = useNavigate()
 
@@ -32,6 +33,7 @@ const LoginPage = ({setToken}:props) => {
     setToken(response.data.token)
     console.log("Server response: ",response.data)
     navigate('/home')
+    setUser(email)
       
     } catch (error) {
       

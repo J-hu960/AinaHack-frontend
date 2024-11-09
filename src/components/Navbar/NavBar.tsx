@@ -2,10 +2,11 @@ import React, { SetStateAction } from 'react';
 import './Navbar.css';
 
 interface props{
-  setSearchQuery: React.Dispatch<SetStateAction<string>>
+  setSearchQuery: React.Dispatch<SetStateAction<string>>,
+  user:string,
 }
 
-const Navbar= ({setSearchQuery}:props) => {
+const Navbar= ({setSearchQuery,user}:props) => {
   return (
     <nav className="navbar navbar-expand-lg">
       <div className="container-fluid">
@@ -80,13 +81,7 @@ const Navbar= ({setSearchQuery}:props) => {
                 />
               </svg>
             </a>
-            <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li>
-                <a className="dropdown-item" href="perfil.html">
-                  Ver perfil
-                </a>
-              </li>
-            </ul>
+            {user && <p>Benvingut,{user}!</p>}
           </div>
         </div>
       </div>

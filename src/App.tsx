@@ -16,22 +16,22 @@ import AudioRecorder from './components/AudioRecorder/AudioRecorder';
 const App: React.FC = () => {
 
   const [searchQuery,setSearchQuery]= useState('')
-  const [user,setUser] = useState({})
+  const [user,setUser] = useState<string>('')
   const [toke,setToken] = useState<string>('')
  
   return (
     <div className='app-container'>
-      <Navbar setSearchQuery={setSearchQuery} />
+      <Navbar setSearchQuery={setSearchQuery} user={user}/>
       <div className='container-custom'>
         <Router>      
           <Routes>
-            <Route path="/" element={<LoginPage setToken={setToken} />} />
+            <Route path="/" element={<LoginPage setUser={setUser} setToken={setToken} />} />
             <Route path="/perfil" element={<Perfil />} />
             <Route path="/curso-details/:id" element={<CourseDetails />} /> {/* Ruta con parámetro dinámico */}
             <Route path="/chatbot" element={<ChatBot />} />
             <Route path="/mi-lista" element={<MyList />} />
             <Route path="/signUp" element={<MultiStepForm />} />
-            <Route path="/login" element={<LoginPage setToken={setToken} />} />
+            <Route path="/login" element={<LoginPage setUser={setUser} setToken={setToken} />} />
             <Route path="/home" element={<Home searchQuery={searchQuery} />} />
             <Route path="/audio" element={<AudioRecorder />} />
 

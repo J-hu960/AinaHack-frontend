@@ -13,6 +13,11 @@
   overflow: hidden;
   text-align: left;
   transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
 }
 .img-wrapper{
   display: flex;

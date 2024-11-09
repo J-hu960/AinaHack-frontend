@@ -3,13 +3,16 @@ import { Link } from "react-router-dom";
 
 function CustomLink({ to, children, ...props }) {
   const linkStyle = {
-    color: "#007bff",
+    color: "#5a5146",
     fontWeight: "bold",
     textDecoration: "none",
     padding: "8px 12px",
     borderRadius: "8px",
     transition: "all 0.3s ease",
     display: "inline-block",
+    backgroundColor: "#dad2bc",
+
+    
   };
 
   const hoverStyle = {

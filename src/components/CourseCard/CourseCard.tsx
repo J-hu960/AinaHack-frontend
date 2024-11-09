@@ -1,28 +1,35 @@
 import React from 'react';
 import './CourseCard.css';
-import { Link } from 'react-router-dom';
 import CustomLink from '../CustomLink';
+import { Curso } from '../../types';
 
 interface CourseCardProps {
-  imgSrc: string;
-  title: string;
-  date: string;
-  id:number
+  curso: Curso,
+  img: string
 }
 
-const CourseCard: React.FC<CourseCardProps> = ({ imgSrc, title, date,id }) => {
+const CourseCard: React.FC<CourseCardProps> = ({ curso, img }) => {
+  const { titulo, descripcion, tipo, modalidad, nivel, rating, precio, estado } = curso;
+
   return (
     <div className="top-course-item">
       <div className="card">
-        <img src={imgSrc} alt={title} />
+        <img src={img} alt={titulo} />
         <div className="card-content">
-          <h3>{title}</h3>
-          <p>{date}</p>
-          <CustomLink to={`/curso-details/${id}`}>Ver detalles</CustomLink>
-        </div>
+          <h3>{titulo}</h3>
+          <p>{descripcion}</p>
+          <p><strong>Tipo:</strong> {tipo}</p>
+          <p><strong>Modalidad:</strong> {modalidad}</p>
+          <p><strong>Nivel:</strong> {nivel}</p>
+          <p><strong>Rating:</strong> {rating} / 5</p>
+          <p><strong>Precio:</strong> ${precio}</p>
+          <p><strong>Estado:</strong> {estado}</p>
+          <CustomLink to={`/curso-details/${titulo.replace(/\s+/g, '-').toLowerCase()}`}>
+            Ver detalles
+          </CustomLink>
         </div>
       </div>
-    
+    </div>
   );
 };
 

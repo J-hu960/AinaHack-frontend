@@ -39,11 +39,12 @@ function AudioRecorder() {
 
     try {
         console.log("uploaded")
-      const response = await axios.post("http://localhost:5000/upload", formData, {
+      const response = await axios.post("http://localhost:8000/cb/audio", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
       });
+      console.log(response.data)
       console.log("Transcription:", response.data.transcription);
     } catch (error) {
       console.error("Error uploading audio:", error);
