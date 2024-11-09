@@ -1,0 +1,98 @@
+
+/* Navbar */
+.foto {
+  height: 40px;
+  width: auto;
+  vertical-align: middle;
+}
+
+
+
+/* Estilos para la Navbar */
+.navbar {
+  background-color: #A99985; /* Color de fondo */
+  padding: 10px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo y título de la izquierda */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.navbar-brand img {
+  margin-right: 10px;
+}
+
+/* Enlaces de navegación en el centro */
+.navbar-nav {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  color: #FFFFFF !important;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+/* Barra de búsqueda alineada a la derecha */
+.navbar-center {
+ 
+  margin-right: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #EFEFEF;
+  border-radius: 20px;
+  padding: 5px 10px;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  padding-left: 5px;
+}
+
+.search-bar button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #A99985;
+  font-size: 16px;
+  margin-left: 5px;
+}
+
+/* Ícono de usuario alineado a la derecha */
+.nav-item.dropdown {
+  margin-left: 20px;
+}
+
+.dropdown-toggle {
+  color: #FFFFFF !important;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-toggle svg {
+  margin-left: 5px;
+}
+
+
+

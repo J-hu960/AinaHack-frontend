@@ -1,0 +1,25 @@
+/* styles.css */
+
+.button-submit {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s, transform 0.2s;
+    text-align: center;
+    margin-top: 15px;
+  }
+  
+  .button-submit:hover {
+    background-color: #218838;
+  }
+  
+  .button-submit:active {
+    transform: scale(0.98);
+  }
+  

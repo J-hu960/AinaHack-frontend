@@ -1,0 +1,46 @@
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+#carousel2 {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 120px;
+    padding: 20px;
+    padding-left: 100px;
+    
+    /* Ocultar barras de desplazamiento */
+    scrollbar-width: none; /* Firefox */
+}
+
+#carousel1 {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 20px;
+    padding: 20px;
+    scrollbar-width: none; /* Firefox */
+
+}
+
+.carousel::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.carousel-button {
+    display: none;
+}
+
+.rank {
+    font-size: 250px;
+    color: #A99985;
+    opacity: 0.2;
+    position: absolute;
+    left: -100px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: bold;
+}

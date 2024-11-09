@@ -1,0 +1,151 @@
+/* styles.css */
+
+/* Contenedor principal */
+.step-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Títulos de los pasos */
+  .step-title {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  /* Estilo de los inputs */
+  .input-field {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+  }
+  
+  .input-field:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  /* Botón estilizado */
+  .button-next {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .button-next:hover {
+    background-color: #0056b3;
+  }
+  
+  .button-next:disabled {
+    background-color: #c0c0c0;
+    cursor: not-allowed;
+  }
+
+  /* Estilo general de la página */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+}
+
+.form-container {
+  text-align: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #1d355d;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #9a9fb0;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Estilo de la tarjeta */
+.card {
+  background-color: #f1f2f6;
+  /* padding: 2rem; */
+  /* border-radius: 16px; */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 600px;
+  margin: auto;
+}
+
+.question {
+  font-size: 1.5rem;
+  color: #1d355d;
+  margin-bottom: 1rem;
+}
+
+/* Estilo del input */
+.input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+/* Estilo del botón */
+.next-button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #A1C45A;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.next-button:hover {
+  background-color: #99bb56;
+}
+
+/* Enlace de inicio de sesión */
+.login-text {
+  margin-top: 1.5rem;
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.login-link {
+  color: #1d355d;
+  text-decoration: underline;
+}
+
+/* Información de pasos */
+.step-info {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-top: 1rem;
+}
+h1{
+  margin-top: 40px;
+}
+
+  
