@@ -12,12 +12,15 @@ import CourseDetails from './pages/CourseDetails';
 import MultiStepForm from './pages/Form';
 import LoginPage from './pages/Login';
 import AudioRecorder from './components/AudioRecorder/AudioRecorder';
+import { Curso } from './types';
 
 const App: React.FC = () => {
 
   const [searchQuery,setSearchQuery]= useState('')
   const [user,setUser] = useState<string>('')
   const [toke,setToken] = useState<string>('')
+  const [recommendedCourses,setRecommendedCourses] = useState<Curso[]>([])
+
  
   return (
     <div className='app-container'>
@@ -25,14 +28,13 @@ const App: React.FC = () => {
       <div className='container-custom'>
         <Router>      
           <Routes>
-            <Route path="/" element={<LoginPage setUser={setUser} setToken={setToken} />} />
+            <Route path="/" element={<LoginPage setRecommended={setRecommendedCourses} setUser={setUser} setToken={setToken} />} />
             <Route path="/perfil" element={<Perfil />} />
             <Route path="/curso-details/:id" element={<CourseDetails />} /> {/* Ruta con parámetro dinámico */}
             <Route path="/chatbot" element={<ChatBot />} />
-            <Route path="/mi-lista" element={<MyList />} />
             <Route path="/signUp" element={<MultiStepForm />} />
-            <Route path="/login" element={<LoginPage setUser={setUser} setToken={setToken} />} />
-            <Route path="/home" element={<Home searchQuery={searchQuery} />} />
+            <Route path="/login" element={<LoginPage setRecommended={setRecommendedCourses} setUser={setUser} setToken={setToken} />} />
+            <Route path="/home" element={<Home recommendedCourses={recommendedCourses} searchQuery={searchQuery} />} />
             <Route path="/audio" element={<AudioRecorder />} />
 
 

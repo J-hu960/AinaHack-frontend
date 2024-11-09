@@ -6,14 +6,12 @@ import { Curso } from '../types';
 
 interface props{
   searchQuery:string;
+  recommendedCourses:Curso[]
 }
 
-const Home = ({searchQuery}:props) => {
+const Home = ({searchQuery,recommendedCourses}:props) => {
 
-  const [recommendedCourses,setRecommendedCourses] = useState<Curso[]>([])
   const [trendingCourse,setTrendingCourse] = useState<Curso[]>([])
-
-
 
  
   const filteredCourses = searchQuery.trim() !== '' ?
@@ -37,7 +35,7 @@ const Home = ({searchQuery}:props) => {
 
         </div>
         <h2>Els teus recomenats</h2>
-        <Carousel courses={recommendedCourses}  isTopCourses={false}/>
+        {recommendedCourses.length>0 &&<Carousel courses={recommendedCourses}  isTopCourses={false}/>}
         <h2 className='second-h2'>Top cursos del dia</h2>
         <Carousel courses={trendingCourse} isTopCourses={true} />
         </>

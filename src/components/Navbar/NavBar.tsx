@@ -43,9 +43,7 @@ const Navbar= ({setSearchQuery,user}:props) => {
             <a className="nav-link" href="/home">
               Inici
             </a>
-            <a className="nav-link" href="/mi-lista">
-              La meva llista
-            </a>
+          
             <a className="nav-link" href="/chatbot">
               Chatbot
             </a>
@@ -81,7 +79,6 @@ const Navbar= ({setSearchQuery,user}:props) => {
                 />
               </svg>
             </a>
-            {user && <p>Benvingut,{user}!</p>}
           </div>
         </div>
       </div>

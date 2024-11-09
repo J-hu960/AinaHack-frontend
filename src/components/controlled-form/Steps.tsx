@@ -96,7 +96,7 @@ const Step4 = ({ goNext }) => {
 
   <div className="card">
     <h2 className="question text-center">Tria una contrasenya</h2>
-    <input onChange={e => setPassword(e.target.value)} type="text" className="input" placeholder="Nom" />
+    <input onChange={e => setPassword(e.target.value)} type="text" className="input" placeholder="Contrasenya" />
 
     <button className="next-button" onClick={handleNext}>Següent</button>
 

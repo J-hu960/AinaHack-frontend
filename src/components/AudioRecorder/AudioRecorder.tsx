@@ -38,14 +38,16 @@ function AudioRecorder() {
     formData.append("audio", audioBlob, "recording.wav");
 
     try {
-        console.log("uploaded")
-      const response = await axios.post("http://localhost:8000/cb/audio", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
-      console.log(response.data)
-      console.log("Transcription:", response.data.transcription);
+        console.log("uploaded",formData)
+      // const response = await axios.post("http://localhost:8000/cb/audio", formData, {
+      //   headers: {
+      //     "Content-Type": "multipart/form-data",
+      //   },
+      // });
+      // console.log(response.data)
+      // console.log("Transcription:", response.data.transcription);
+       //quiero forzar un refresh aqui para que el componente vuelva a su estado inicial
+       setAudioBlob(null)
     } catch (error) {
       console.error("Error uploading audio:", error);
     }
@@ -65,5 +67,4 @@ function AudioRecorder() {
     </div>
   );
 }
-
 export default AudioRecorder;

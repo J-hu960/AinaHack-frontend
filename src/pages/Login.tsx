@@ -2,25 +2,27 @@ import React, { useEffect, useState } from 'react';
 import './LoginPage.css';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { Curso } from '../types';
 
 interface  props  {
   setToken:React.Dispatch<React.SetStateAction<string>>,
   setUser: React.Dispatch<React.SetStateAction<string>>,
+  setRecommended: React.Dispatch<React.SetStateAction<Curso[]>>
 }
 
-const LoginPage = ({setToken,setUser}:props) => {
+const LoginPage = ({setToken,setUser,setRecommended}:props) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  // const populateBBDD =async()=>{
-  //   const response = await axios.post("url")
-  //   console.log(response.data)
+  const populateBBDD =async()=>{
+    const response = await axios.get("http://localhost:8000/api/recommendations/1")
+    setRecommended(response.data)
 
-  // }
+  }
 
-  // useEffect(()=>{
-  //   populateBBDD()
-  // },[])
+  useEffect(()=>{
+    populateBBDD()
+  },[])
 
   const navigate = useNavigate()
 
